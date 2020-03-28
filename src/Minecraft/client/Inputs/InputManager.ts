@@ -65,13 +65,7 @@ export class InputManager {
 		if (this.isOnCamera) {
 			camera.pan(-movedX * 0.01);
 			camera.tilt(movedY * 0.01);
-			this.rotationZ += p.map(movedX * Math.PI, -p.width / 2, p.width / 2, -Math.PI, Math.PI);
-			if (this.rotationZ > Math.PI) {
-				this.rotationZ = -Math.PI;
-			}
-			if (this.rotationZ < -Math.PI) {
-				this.rotationZ = Math.PI;
-			}
+			this.rotationZ += movedX * 0.01;
 			
 			for (let key of Object.keys(this.keysMap)) {
 				if (p.keyIsDown(this.keysMap[key].charCodeAt(0))) {
@@ -85,11 +79,11 @@ export class InputManager {
 							break;
 						
 						case 'move.left':
-							player.move(this.rotationZ - Math.PI / 2, player.speed);
+							player.move(this.rotationZ - p.HALF_PI, player.speed);
 							break;
 						
 						case 'move.right':
-							player.move(this.rotationZ - Math.PI / 2, -player.speed);
+							player.move(this.rotationZ - p.HALF_PI, -player.speed);
 							break;
 						
 						case 'move.up':

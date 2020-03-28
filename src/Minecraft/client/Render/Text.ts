@@ -1,8 +1,7 @@
 import p5 from 'p5';
 
 export class Text {
-	constructor(public p: p5, public text: string, public xRelative: number, public yRelative: number) {
-	
+	constructor(public p: p5, public text: string | number | object | boolean | any[], public xRelative: number, public yRelative: number) {
 	}
 	
 	render() {
