@@ -1,11 +1,11 @@
 import p5 from 'p5';
 //@ts-ignore
 import fontURL from '../OpenSans-Regular.ttf';
+import {InputManager} from './client/Inputs/InputManager';
+import {Player} from './client/Player/Player';
 import {Drawer} from './client/Render/Drawing';
 import {initTextures, Textures} from './client/Render/Textures';
 import {Tile} from './client/Render/Tile';
-import {InputManager} from './client/Inputs/InputManager';
-import {Player} from './client/Player/Player';
 import {registerAllBlocks} from './registry/Blocks';
 import {Blocks} from './registry/Registry';
 import {BlockPos} from './utils/BlockPos';
@@ -17,7 +17,6 @@ export class App {
 	public readonly drawer: Drawer;
 	
 	constructor(public readonly p: p5) {
-		this.init();
 		this.player = new Player(new BlockPos(1, 0, 0, this.p), 2);
 		this.inputManager = new InputManager({
 			'move.toward'  : 'Z',

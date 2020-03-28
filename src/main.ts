@@ -8,9 +8,13 @@ function sketch(p: p5) {
 		console.log('[P5][Success] Starting canvas.');
 		
 		Minecraft = new App(p);
+		Minecraft.init();
 	};
 	
 	p.draw = () => {
+		if ( !Minecraft) {
+			return;
+		}
 		Minecraft.step();
 	};
 	

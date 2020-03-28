@@ -59,8 +59,8 @@ export class InputManager {
 	
 	step(p: p5, player: Player, camera: p5.Camera) {
 		
-		const movedX = p.pmouseX - p.mouseX;
-		const movedY = p.pmouseY - p.mouseY;
+		//@ts-ignore
+		const movedX = p.movedX, movedY = p.movedY;
 		
 		if (this.isOnCamera) {
 			camera.pan(-movedX * 0.01);

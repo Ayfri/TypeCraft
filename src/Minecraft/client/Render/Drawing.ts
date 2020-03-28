@@ -12,9 +12,10 @@ export class Drawer {
 	 * All the tiles that are drawed.
 	 * @type {Tile[]}
 	 */
-	private tiles: Tile[];
+	protected tiles: Tile[];
 	
 	constructor(public p: p5, public player: Player) {
+		this.tiles = [];
 	}
 	
 	/**
