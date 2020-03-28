@@ -3,6 +3,7 @@ import {Block} from '../../registry/Blocks/Block';
 import {BlockPos} from '../../utils/BlockPos';
 import {Player} from '../Player/Player';
 import {Models} from './Models';
+import {Text} from './Text';
 import {Textures} from './Textures';
 import {Tile} from './Tile';
 
@@ -103,9 +104,9 @@ export class Drawer {
 	
 	drawCoords() {
 		this.p.textSize(25);
-		this.p.text(`x : ${this.player.position.x / 100}`, -this.p.width / 2 + 50, this.p.height / 2 - 50);
-		this.p.text(`y : ${this.player.position.y / 100}`, -this.p.width / 2 + 50, this.p.height / 2 - 75);
-		this.p.text(`z : ${this.player.position.z / 100}`, -this.p.width / 2 + 50, this.p.height / 2 - 100);
-		this.p.text(`fps : ${Math.round(this.p.frameRate())}`, -this.p.width / 2 + 50, this.p.height / 2 - 140);
+		new Text(this.p, `x : ${this.player.position.x / 100}`, 50, 50).render();
+		new Text(this.p, `y : ${this.player.position.y / 100}`, 50, 75).render();
+		new Text(this.p, `z : ${this.player.position.z / 100}`, 50, 100).render();
+		new Text(this.p, `fps : ${Math.round(this.p.frameRate())}`, 50, 140).render();
 	}
 }

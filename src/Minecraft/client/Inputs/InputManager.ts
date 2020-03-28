@@ -66,6 +66,12 @@ export class InputManager {
 			camera.pan(-movedX * 0.01);
 			camera.tilt(movedY * 0.01);
 			this.rotationZ += p.map(movedX * Math.PI, -p.width / 2, p.width / 2, -Math.PI, Math.PI);
+			if (this.rotationZ > Math.PI) {
+				this.rotationZ = -Math.PI;
+			}
+			if (this.rotationZ < -Math.PI) {
+				this.rotationZ = Math.PI;
+			}
 			
 			for (let key of Object.keys(this.keysMap)) {
 				if (p.keyIsDown(this.keysMap[key].charCodeAt(0))) {
