@@ -39,7 +39,7 @@
 		"html-webpack-plugin": "^4.3.0",
 		"jasmine-core": "3.6.0",
 		"karma": "5.1.1",
-		"karma-jasmine": "4.0.0",
+		"karma-jasmine": "4.0.1",
 		"karma-phantomjs-launcher": "1.0.4",
 		"karma-webpack": "4.0.2",
 		"source-map-loader": "1.0.1",
